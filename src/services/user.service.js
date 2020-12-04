@@ -1,18 +1,26 @@
-const errorHandler = require('../_helpers/error-handler');
-const db = require('../db/db');
-const { User } = db;
+const errorHandler = require('../_helpers/error-handler')
+const db = require('../db/db')
+const { User } = db
 
 async function getUser(req, res) {
-    const user = await User.findOne({username: req.params.username});
-    const friends =  await User.find({username: user.following}, { username:1, tweets: 1 } );
-    return res.status(200).json({user, friends});
+    try {
+        const user = await User.findOne({ username: req.params.username })
+        const friends = await User.find({ username: user.following }, { username: 1, tweets: 1 })
+        return res.status(200).json({ user, friends })
+    } catch (error) {
+        return errorHandler(error, req, res)
+    }
 }
 async function getUsers(req, res) {
-    const users = await User.find();
-    return res.status(200).json(users);
+    try {
+        const users = await User.find()
+        return res.status(200).json(users)
+    } catch (error) {
+        return errorHandler(error, req, res)
+    }
 }
 
 module.exports = {
     getUser,
-    getUsers
+    getUsers,
 }

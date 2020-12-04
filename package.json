@@ -1,35 +1,35 @@
 {
-  "name": "tweet-feed",
-  "version": "1.0.0",
-  "description": "Reading inputs from two txt files and creating tweet feed for users",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./index.js",
-    "dev": "nodemon ./index.js",
-    "prettier": "prettier --write ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/saksijas/tweet-feed.git"
-  },
-  "author": "saksijas",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "eslint": "^5.16.0",
-    "eslint-plugin-es-beautifier": "^1.0.1",
-    "express": "^4.17.1",
-    "mongodb": "^3.6.3",
-    "mongoose": "^5.10.13",
-    "nodemon": "^2.0.6",
-    "prettier": "^2.1.2",
-    "rootpath": "^0.1.2"
-  },
-  "bugs": {
-    "url": "https://github.com/saksijas/tweet-feed/issues"
-  },
-  "homepage": "https://github.com/saksijas/tweet-feed#readme"
+    "name": "tweet-feed",
+    "version": "1.0.0",
+    "description": "Reading inputs from two txt files and creating tweet feed for users",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node ./index.js",
+        "dev": "nodemon ./index.js",
+        "prettier": "prettier --write ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/saksijas/tweet-feed.git"
+    },
+    "author": "saksijas",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "eslint": "^5.16.0",
+        "eslint-plugin-es-beautifier": "^1.0.1",
+        "express": "^4.17.1",
+        "mongodb": "^3.6.3",
+        "mongoose": "^5.10.13",
+        "nodemon": "^2.0.6",
+        "prettier": "^2.1.2",
+        "rootpath": "^0.1.2"
+    },
+    "bugs": {
+        "url": "https://github.com/saksijas/tweet-feed/issues"
+    },
+    "homepage": "https://github.com/saksijas/tweet-feed#readme"
 }
