@@ -17,7 +17,7 @@ server.use(cors());
 
 // api routes
 server.use('/parse', require('./src/routes/parse.routes'));
-// server.use('/user', require('./src/routes/user.routes'));
+server.use('/user', require('./src/routes/user.routes'));
 
 // global error handler
 // server.use(errorHandler);
