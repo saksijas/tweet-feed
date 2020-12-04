@@ -1,4 +1,3 @@
-
 require('rootpath')();
 const express = require('express');
 const router = express.Router();
@@ -11,4 +10,3 @@ function parse(req, res) {
 router.post('/', parse);
 
 module.exports = router;
-

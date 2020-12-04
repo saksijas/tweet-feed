@@ -9,8 +9,8 @@ const schema = new Schema({
     type: [],
   },
   tweets: {
-      type: []
-  }
+    type: [],
+  },
 });
 
 schema.set('toJSON', {
