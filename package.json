@@ -3,7 +3,7 @@
     "jest": {
         "verbose": true,
         "setupFiles": [
-          "<rootDir>/jest/setEnvVars.js"
+            "<rootDir>/jest/setEnvVars.js"
         ]
     },
     "version": "1.0.0",
