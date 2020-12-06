@@ -4,6 +4,16 @@ const userService = require('../services/user.service')
 async function getUser(req, res) {
     try {
         const result = await userService.getUser(req.params.username)
+        if(!result) {
+            return errorHandler(
+                new Error(
+                  'Unable to find the user, username is invalid',
+                ),
+                req,
+                res,
+                401,
+            );
+        }
         return res.status(200).json(result)
     } catch (error) {
         return errorHandler(error, req, res)

@@ -8,7 +8,7 @@ describe('Users service test', () => {
         expect(friends.length).toBe(3)
     })
     test('should return user named Ed', async () => {
-        const { user, friends } = await userService.getUser('Ed')
-        expect(user).toBe(null)
+        const result = await userService.getUser('Ed')
+        expect(result).toBe(null)
     })
 })

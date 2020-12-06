@@ -7,11 +7,19 @@ const { User } = db
 
 let tweets = []
 let users = []
+userFile = 'user.txt'
+tweetFile = 'tweet.txt'
 
 function splitter(line, splitWord) {
     return line.split(splitWord)
 }
-async function loadUsers(userFile) {
+function getLoadedUsers() {
+    return users
+}
+function getLoadedTweets() {
+    return tweets
+}
+async function loadUsers() {
     fs.readFile(resourcePath + userFile, 'utf8', async (err, data) => {
         if (err) {
             throw err
@@ -41,7 +49,7 @@ async function loadUsers(userFile) {
         await User.insertMany(users)
     })
 }
-async function loadTweets(tweetFile, userFile) {
+async function loadTweets() {
     fs.readFile(resourcePath + tweetFile, 'utf8', (err, data) => {
         if (err) throw err
         lines = data.split('\r\n')
@@ -54,11 +62,12 @@ async function loadTweets(tweetFile, userFile) {
                 tweets.push(tweet)
             }
         })
-        loadUsers(userFile)
-        return true;
+        loadUsers()
     })
 }
 
 module.exports = {
     loadTweets,
+    getLoadedTweets,
+    getLoadedUsers,
 }

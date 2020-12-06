@@ -4,7 +4,7 @@ const router = express.Router()
 const parseMiddleware = require('../middleware/parse.middleware')
 
 function parse(req, res) {
-  parseMiddleware.parse(req, res)
+    parseMiddleware.parse(req, res)
 }
 
 router.post('/', parse)
