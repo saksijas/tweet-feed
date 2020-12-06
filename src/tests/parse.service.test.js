@@ -4,7 +4,5 @@ describe('Users service test', () => {
         await parseService.loadTweets()
         const tweets = parseService.getLoadedTweets();
         const users = parseService.getLoadedUsers();
-        console.log(users);
-  
     })
 })
