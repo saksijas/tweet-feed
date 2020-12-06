@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 const users = require('../models/user.model')
-
-mongoose.connect(process.env.dbUrl, {
+mongoose.connect('mongodb://localhost:27017/tweetFeed', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,

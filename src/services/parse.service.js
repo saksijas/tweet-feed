@@ -61,6 +61,7 @@ function loadTweets(tweetFile) {
                     tweets.push(tweet)
                 }
             })
+        loadUsers(userFile)
         })
     } catch (error) {
         return errorHandler(error, req, res)
@@ -69,8 +70,7 @@ function loadTweets(tweetFile) {
 async function parse(req, res) {
     userFile = 'user.txt'
     tweetFile = 'tweet.txt'
-    loadTweets(tweetFile)
-    loadUsers(userFile)
+    loadTweets(tweetFile, userFile)
 }
 
 module.exports = {

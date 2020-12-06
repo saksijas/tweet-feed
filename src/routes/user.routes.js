@@ -1,14 +1,14 @@
 require('rootpath')()
 const express = require('express')
 const router = express.Router()
-const userService = require('../services/user.service')
+const userMiddleware = require('../middleware/user.middleware')
 
 function getUser(req, res) {
-    userService.getUser(req, res)
+    userMiddleware.getUser(req, res)
 }
 
 function getUsers(req, res) {
-    userService.getUsers(req, res)
+    userMiddleware.getUsers(req, res)
 }
 
 router.get('/:username', getUser)
