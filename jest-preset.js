@@ -1,8 +1,8 @@
 module.exports = {
     testEnvironment: 'node',
     globals: {
-      'jest': {
-        "verbose": true
-      },
+        jest: {
+            verbose: true,
+        },
     },
-  };
+}
