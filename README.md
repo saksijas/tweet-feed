@@ -10,38 +10,32 @@ as well as requirements of MongoDB running in background.
 
 ## Technology stack
 
-This application uses React framework with Material UI library. It relies on small backend service for data fetching and adding new consents.
-
-## Project Setup
-
-### Install dependencies
-
-yarn
+This application uses Node with Express and MongoDB.
 
 ### Start project
 
-yarn start
+npm start or npm run dev
 
 ## Project structure
 
 In the project structure we have the following parts:
 
-- src
-  - _helpers/
+|-- src
+  |-- _helpers/
 
-  - db/
+  |-- db/
 
-  - middleware/
+  |-- middleware/
 
-  - models/
+  |-- models/
 
-  - resources/
+  |-- resources/
 
-  - routes/
+  |-- routes/
 
-  - services/
+  |-- services/
 
-  - tests/
+  |-- tests/
 
 _helpers folder contains errorHandler component.
 
@@ -62,6 +56,8 @@ Running `npm run test` will start test that will cover parsing and inserting int
 ## Running in dev mode
 
 To run server in dev mode use command `npm run dev`
+
+
 ## Service folder
 Service folder contains two files, one is for importing users and tweets to database and other is for reading txt files and parsing it into readable data.
 		
