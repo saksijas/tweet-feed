@@ -19,24 +19,17 @@ npm start or npm run dev
 ## Project structure
 
 In the project structure we have the following parts:
-
-|-- src
-  |-- _helpers/
-
-  |-- db/
-
-  |-- middleware/
-
-  |-- models/
-
-  |-- resources/
-
-  |-- routes/
-
-  |-- services/
-
-  |-- tests/
-
+```
+- src
+    - _helpers/
+    - db/
+    - middleware/
+    - models/
+    - resources/
+    - routes/
+    - services/
+    - tests/
+```
 _helpers folder contains errorHandler component.
 
 db folder contains file for db connection
