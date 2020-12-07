@@ -20,15 +20,15 @@ npm start or npm run dev
 
 In the project structure we have the following parts:
 ```
-- src
-    - _helpers/
-    - db/
-    - middleware/
-    - models/
-    - resources/
-    - routes/
-    - services/
-    - tests/
+|- src
+  |- _helpers/
+  |- db/
+  |- middleware/
+  |- models/
+  |- resources/
+  |- routes/
+  |- services/
+  |- tests/
 ```
 _helpers folder contains errorHandler component.
 
