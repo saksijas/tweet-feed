@@ -14,7 +14,7 @@ async function getUser(req, res) {
 }
 async function getUsers(req, res) {
     try {
-        const users = await userService.getUser()
+        const users = await userService.getUsers()
         return res.status(200).json(users)
     } catch (error) {
         return errorHandler(error, req, res)

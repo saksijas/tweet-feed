@@ -19,51 +19,45 @@ function getLoadedUsers() {
 function getLoadedTweets() {
     return tweets
 }
-async function loadUsers() {
-    fs.readFile(resourcePath + userFile, 'utf8', async (err, data) => {
-        if (err) {
-            throw err
-        }
-        lines = data.split('\r\n')
-        lines.forEach((line) => {
-            let newUser = {}
-            if (line.length > 0) {
-                const splitterResult = splitter(line, ' follows ')
-                newUser.username = splitterResult[0]
-                newUser.following = splitterResult[1].split(', ')
-                newUser.tweets = tweets.filter((tweet) => newUser.username === tweet.username).map((tweet) => tweet.content)
+function loadUsers() {
+    const userData = fs.readFileSync(resourcePath + userFile, 'utf8').toString()
+    lines = userData.split('\r\n')
+    lines.forEach((line) => {
+        let newUser = {}
+        if (line.length > 0) {
+            const splitterResult = splitter(line, ' follows ')
+            newUser.username = splitterResult[0]
+            newUser.following = splitterResult[1].split(', ')
+            newUser.tweets = tweets.filter((tweet) => newUser.username === tweet.username).map((tweet) => tweet.content)
 
-                let user = users.filter((user) => user.username === newUser.username)[0]
-                // check if user already exists
-                if (user) {
-                    // Filtering already followed users
-                    user.following = user.following.filter((followingUser) => !newUser.following.includes(followingUser))
-                    user.following.push(...newUser.following)
-                    userIndex = users.findIndex((userObject) => userObject.username === user.username)
-                    users[userIndex].following = user.following
-                } else {
-                    users.push(newUser)
-                }
+            let user = users.filter((user) => user.username === newUser.username)[0]
+            // check if user already exists
+            if (user) {
+                // Filtering already followed users
+                user.following = user.following.filter((followingUser) => !newUser.following.includes(followingUser))
+                user.following.push(...newUser.following)
+                userIndex = users.findIndex((userObject) => userObject.username === user.username)
+                users[userIndex].following = user.following
+            } else {
+                users.push(newUser)
             }
-        })
-        await User.insertMany(users)
+        }
     })
 }
-async function loadTweets() {
-    fs.readFile(resourcePath + tweetFile, 'utf8', (err, data) => {
-        if (err) throw err
-        lines = data.split('\r\n')
-        lines.forEach((line) => {
-            let tweet = {}
-            if (line.length > 0) {
-                const splitterResult = splitter(line, '> ')
-                tweet.username = splitterResult[0]
-                tweet.content = splitterResult[1]
-                tweets.push(tweet)
-            }
-        })
-        loadUsers()
+function loadTweets() {
+    const file = fs.readFileSync(resourcePath + tweetFile, 'utf8').toString()
+    lines = file.split('\r\n')
+    lines.forEach((line) => {
+        let tweet = {}
+        if (line.length > 0) {
+            const splitterResult = splitter(line, '> ')
+            tweet.username = splitterResult[0]
+            tweet.content = splitterResult[1]
+            tweets.push(tweet)
+        }
     })
+    loadUsers()
+    return { users, tweets }
 }
 
 module.exports = {
