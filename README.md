@@ -8,14 +8,53 @@ NodeJS Application for loading tweets and users from two text files. As well ret
 Running npm install will install all required packages for running node server,
 as well as requirements of MongoDB running in background.
 
-## Source folder
-Folder contains following subfolders:
-	 - DB ( init for mongo )
-	 - Model, contains models for mongoose
-	 - Middleware, connection between routes and services
-	 - Services, communication with database(fetching, inserting data)
-	 - Tests, unit tests with jest
-	 - 
+## Technology stack
+
+This application uses React framework with Material UI library. It relies on small backend service for data fetching and adding new consents.
+
+## Project Setup
+
+### Install dependencies
+
+yarn
+
+### Start project
+
+yarn start
+
+## Project structure
+
+In the project structure we have the following parts:
+
+|- src
+ |- _helpers/
+
+ |- db/
+
+ |- middleware/
+
+ |- models/
+
+ |- resources/
+
+ |- routes/
+
+ |- services/
+
+ |- tests/
+
+_helpers folder contains errorHandler component.
+
+db folder contains file for db connection
+
+middleware folder connection between routes and services
+
+services folder communication with database(fetching, inserting data)
+
+routes folder contains express router config for user and parse routes
+
+test folder contains tests for parser and user service.
+
 ## Testing
 
 Running `npm run test` will start test that will cover parsing and inserting into database as well as reading from database.
