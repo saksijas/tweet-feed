@@ -1,5 +1,4 @@
-const db = require('../db/db')
-const { User } = db
+const { User } = require('../db/db')
 
 async function getUser(username) {
     const user = await User.findOne({ username: username })
@@ -9,10 +8,10 @@ async function getUser(username) {
         const tweetsMapper = (tweet, username) => {
             tweets.push({ user: username, content: tweet })
         }
-        user.tweets.map(tweet => tweetsMapper(tweet, user.username))
+        user.tweets.map((tweet) => tweetsMapper(tweet, user.username))
 
         // Going through list of friends mapping each tweet with username
-        friends.forEach((friend) => friend.tweets.map(tweet => tweetsMapper(tweet, friend.username)))
+        friends.forEach((friend) => friend.tweets.map((tweet) => tweetsMapper(tweet, friend.username)))
         return { user, tweets }
     }
     // Will return null and error will be thrown

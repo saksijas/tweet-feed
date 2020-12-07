@@ -1,4 +1,4 @@
-const errorHandler = require('../_helpers/error-handler')
+const errorHandler = require('../helpers/error-handler')
 const parseService = require('../services/parse.service')
 const userService = require('../services/user.service')
 async function parse(req, res) {

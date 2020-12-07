@@ -2,9 +2,6 @@ const fs = require('fs')
 const path = require('path')
 const resourcePath = path.join(__dirname, '..', 'resources/')
 
-const db = require('../db/db')
-const { User } = db
-
 let tweets = []
 let users = []
 userFile = 'user.txt'
