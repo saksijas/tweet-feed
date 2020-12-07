@@ -26,22 +26,22 @@ yarn start
 
 In the project structure we have the following parts:
 
-|- src
- |- _helpers/
+- src
+  - _helpers/
 
- |- db/
+  - db/
 
- |- middleware/
+  - middleware/
 
- |- models/
+  - models/
 
- |- resources/
+  - resources/
 
- |- routes/
+  - routes/
 
- |- services/
+  - services/
 
- |- tests/
+  - tests/
 
 _helpers folder contains errorHandler component.
 
