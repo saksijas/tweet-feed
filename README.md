@@ -11,11 +11,29 @@ as well as requirements of MongoDB running in background.
 
 This application uses Node with Express and MongoDB.
 
+## Project Setup
+### Add .env file
+
+Copy this to you environment file
+
+```
+dbUrl="mongodb://localhost:27017/tweetFeed"
+url="mongodb://localhost:27017"
+dbName="tweetFeed"
+```
+
+### Install dependencies
+
+Run
+```
+npm install
+```
+
 ### Start project
 
 npm start or npm run dev
 
-## Project structure
+### Project structure
 
 In the project structure we have the following parts:
 
